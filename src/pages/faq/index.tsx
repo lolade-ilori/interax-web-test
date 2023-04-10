@@ -1,11 +1,24 @@
-import AboutTab from '@components/aboutTab'
+import AboutTab from '@components/tabs/aboutTab'
 import Footer from '@components/footer'
 import Header from '@components/header'
 import Waitlist from '@components/waitlist'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaqBanner, QuestionsSection, TabPills } from './faq.styles'
+import SecurityTab from '@components/tabs/securityTab'
+import TaskOrientedTab from '@components/tabs/taskOrientedTab'
+import FunctionalBasedTab from '@components/tabs/functionalBased'
 
 const Faq = () => {
+    const [tabChosen, setTabChosen] = useState('About interaX')
+
+    const TabsOption:any = [
+        {name: 'About interaX'},
+        {name: 'Functional-based'},
+        {name: 'Task-oriented'},
+        {name: 'Technical'}, 
+        {name: 'Security'}, 
+    ] 
+
   return (
     <>
         <Header/>
@@ -40,29 +53,40 @@ const Faq = () => {
                     </div>
 
                     <div className="pills-wrapper">
-                        <TabPills>
-                            About interaX
-                        </TabPills>
-
-                        <TabPills>
-                            Functional-based
-                        </TabPills>
-
-                        <TabPills>
-                            Task-oriented
-                        </TabPills>
-
-                        <TabPills>
-                            Technical
-                        </TabPills>
-
-                        <TabPills>
-                            Security
-                        </TabPills>
+                        {
+                            TabsOption?.map((item:any) => {
+                                return (
+                                    <TabPills active={item?.name === tabChosen ? true : false} onClick={() => {setTabChosen(item?.name)}}>
+                                        {item?.name}
+                                    </TabPills>
+                                )
+                            })
+                        }
                     </div>
 
                     <div className="tabs-section">
-                        <AboutTab />
+                        { 
+                            tabChosen === 'About interaX' &&
+                            <AboutTab />
+                        }
+
+                        { 
+                            tabChosen === 'Functional-based' &&
+                            <FunctionalBasedTab />
+                        }
+
+                        { 
+                            tabChosen === 'Task-oriented' &&
+                            <TaskOrientedTab />
+                        }
+
+                        {    
+                            tabChosen === 'Security' &&
+                            <SecurityTab />
+                        }
+
+                        
+                        
                     </div>
                 </div>
             </div>

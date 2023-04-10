@@ -179,7 +179,7 @@ export const QuestionsSection = styled.section `
     }
 `
 
-export const TabPills = styled.div `
+export const TabPills = styled.div <{active?: boolean}> ` 
     border-radius: 30px;
     padding: 15px 30px;
     border: solid 1px #1F2ADE;
@@ -187,8 +187,9 @@ export const TabPills = styled.div `
     justify-content: center;
     align-items: center;
     font-size: 13px;
+    background-color: ${(props:any) => props.active ? '#1F2ADE' : 'transparent'};
     font-weight: 600;
-    color: #1F2ADE;
+    color: ${(props:any) => props.active ? '#fff' : '#1F2ADE'};
     cursor: pointer;
     white-space: nowrap;
 

@@ -65,7 +65,7 @@ const Footer = () => {
                     <ul className="column-lists">
                         <li><Link href={'/'}>FAQs</Link></li>
                         <li><Link href={'/'}>Customer Service</Link></li>
-                        <li><Link href={'/'}>Enquires: hello@interax.com</Link></li>
+                        <li><Link href={'/'}>Enquires: hello@interaxhealth.com</Link></li>
                     </ul>
 
                     <div className="social-icons-wrap support-sect">

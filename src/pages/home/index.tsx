@@ -351,7 +351,7 @@ function Home() {
           </div>
         </AboutSection>
 
-        <PioneersSection>
+        {/* <PioneersSection>
           <div className="blue-wrap">
             <div className="text-wrap">
               <h3>Our Pioneers</h3>
@@ -382,7 +382,7 @@ function Home() {
               </PioneersNameWrap>
             </div>
           </PioneersImageWrap>
-        </PioneersSection>
+        </PioneersSection> */}
 
         <InvestBanner>
           <InvestBannerInner>

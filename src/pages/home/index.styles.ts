@@ -6,12 +6,12 @@ export const WrapGrey = styled.div `
     width: 100%;
     background-color: #EEEEEE;
 
-    @media only screen and (max-width: 730px) {
+    @media only screen and (max-width: 768px) {
         min-height: 600px;
     }
 
     @media only screen and (max-width: 430px) {
-        min-height: 500px;
+        min-height: 550px;
     }
 
     .inner-wrap {
@@ -23,6 +23,10 @@ export const WrapGrey = styled.div `
 
         .header-wrap {
             padding: 0 380px;
+
+            @media only screen and (max-width: 1391px) {
+                padding: 0px 330px;
+            }
 
             @media only screen and (max-width: 1130px) {
                 padding: 0 150px;
@@ -44,7 +48,12 @@ export const WrapGrey = styled.div `
                 font-family: 'RecoletaAlt-Regular';
                 font-weight: 500;
 
-                @media only screen and (max-width: 730px) {
+                @media only screen and (max-width: 992px) {
+                    font-size: 50px;
+                    line-height: 60px;
+                }
+
+                @media only screen and (max-width: 768px) {
                     font-size: 40px;
                     line-height: 40px;
                 }
@@ -57,12 +66,23 @@ export const WrapGrey = styled.div `
 
         .content-wrap {
             padding: 30px 480px;
+            @media only screen and (max-width: 1391px) {
+                padding: 10px 350px;
+            }
 
-            @media only screen and (max-width: 730px) {
+            @media only screen and (max-width: 1200px) {
+                padding: 10px 200px;
+            }
+
+            @media only screen and (max-width: 992px) {
                 padding: 10px 150px;
             }
 
-            @media only screen and (max-width: 620px) {
+            @media only screen and (max-width: 768px) {
+                padding: 10px 150px;
+            }
+
+            @media only screen and (max-width: 689px) {
                 padding: 10px 50px;
             }
 
@@ -76,7 +96,7 @@ export const WrapGrey = styled.div `
                 text-align: center;
                 font-weight: 400;
 
-                @media only screen and (max-width: 730px) {
+                @media only screen and (max-width: 768px) {
                     font-size: 17px;
                 }
 
@@ -104,6 +124,10 @@ export const ImageBannerWrap = styled.div`
     gap: 10px;
     flex-wrap: wrap;
     z-index: 400;
+
+    @media only screen and (max-width: 555px) {
+        width: 90% ;
+    }
 
     .image-subwrap {
         flex: 45%;
@@ -144,21 +168,50 @@ export const MissionSection = styled.section `
         /* display: none; */
         /* z-index: -20; */
 
-        @media only screen and (max-width: 730px) {
-            width: 100%;
+        @media only screen and (max-width: 1200px) {
+            width: 80%;
+            right: unset;
+            left: 100px;
         }
+
+        @media only screen and (max-width: 992px) {
+            width: 80%;
+            right: unset;
+            left: 100px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            height: 800px;
+            right: unset;
+            left: unset;
+        }
+
+        
     }
 
     .inner-wrapper {
         padding-top: 350px;
 
+        @media only screen and (max-width: 768px) {
+            padding-top: 200px;
+        }
+
         .head-text {
             padding-left: 60px;
             padding-bottom: 60px;
+
+                @media only screen and (max-width: 480px) {
+                    padding-left: 30px;
+                }
             h3 {
                 color: #fff;
                 font-size: 45px;
                 font-weight: 500;
+
+                @media only screen and (max-width: 480px) {
+                    font-size: 35px
+                }
             }
         }
     }
@@ -176,6 +229,21 @@ export const VisionSection = styled.section `
         right: 200px;
         height: 800px;
         width: 50%;
+
+
+        @media only screen and (max-width: 992px) {
+            width: 80%;
+            right: unset;
+            left: 100px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+            height: 800px;
+            right: unset;
+            left: unset;
+        }
+        
     }
 
     .inner-wrapper {
@@ -184,10 +252,19 @@ export const VisionSection = styled.section `
         .head-text {
             padding-left: 60px;
             padding-bottom: 60px;
+
+            @media only screen and (max-width: 480px) {
+                padding-left: 30px;
+            }
+
             h3 {
                 color: #fff;
                 font-size: 45px;
                 font-weight: 500;
+
+                @media only screen and (max-width: 480px) {
+                    font-size: 35px
+                }
             }
         }
     }
@@ -195,18 +272,29 @@ export const VisionSection = styled.section `
 export const VisionFlex = styled.div `
     display: flex;
     gap: 150px;
-    height: 600px;
+    /* height: 600px; */
 
-    @media only screen and (max-width: 730px) {
-        height: 1380px;
+    @media only screen and (min-width: 1551px) {
+        height: unset;
     }
 
-    @media only screen and (max-width: 730px) {
+    @media only screen and (max-width: 1200px) {
+        gap: 80px;
+        height: unset;
+    }
+
+    @media only screen and (max-width: 992px) {
+        gap: 120px;
         flex-direction: column;
     }
 
+
     .img-wrap {
         flex:25%;
+
+        @media only screen and (max-width: 1200px) {
+            flex: 30%;        
+        }
         img {
             border-top-right-radius: 40px;
             width: 100%;
@@ -214,8 +302,12 @@ export const VisionFlex = styled.div `
             position: relative;
             z-index: 2;
 
-            @media only screen and (max-width: 730px) {
-                height: 600px;
+            @media only screen and (max-width: 992px) {
+                height: 600px
+            }
+
+            @media only screen and (max-width: 480px) {
+                height: 100%;
             }
         }
     }
@@ -226,7 +318,12 @@ export const ContentWrap = styled.div `
     flex: 40%;
     padding-right: 130px;
 
-    @media only screen and (max-width: 730px) {
+    @media only screen and (max-width: 1200px) {
+        padding-right: 60px;
+        flex: 30%
+    }
+
+    @media only screen and (max-width: 992px) {
         padding-right: 60px;
         padding-left: 40px;
     }
@@ -251,6 +348,10 @@ export const ContentWrap = styled.div `
             font-size: 21.6px;
             color: #fff;
             margin-top: 0;
+
+            @media only screen and (max-width: 480px) {
+                font-size: 17px;
+            }
         }
     }
 `
@@ -314,7 +415,7 @@ export const ServiceFlexBox = styled.div `
     align-items: center;
     margin-bottom: 50px;
 
-    @media only screen and (max-width: 730px) {
+    @media only screen and (max-width: 768px) {
         flex-direction: column-reverse;
         gap: 30px;
         margin-bottom: 100px;
@@ -325,12 +426,24 @@ export const ServiceFlexBox = styled.div `
 
         .inner-txt-wrapper {
             padding-right: 80px;
+
+
+            @media only screen and (max-width: 480px) {
+                padding-right: 0px;
+            }
+
+
             h5 {
                 color: #000;
                 font-weight: 600;
                 font-size: 28px;
                 padding-right: 40px;
                 line-height: 35px;
+
+
+                @media only screen and (max-width: 480px) {
+                    padding-right: 0px;
+                }
             }
 
             p {
@@ -338,7 +451,7 @@ export const ServiceFlexBox = styled.div `
                 font-size: 15px;
                 color: #000;
 
-                @media only screen and (max-width: 730px) {
+                @media only screen and (max-width: 768px) {
                     font-size: 20px
                 }
             }
@@ -361,7 +474,7 @@ export const ServiceFlexReverse = styled.div `
     align-items: center;
     margin-bottom: 50px;
 
-    @media only screen and (max-width: 730px) {
+    @media only screen and (max-width: 768px) {
         flex-direction: column;
         gap:40px;
         margin-bottom: 100px;
@@ -373,7 +486,7 @@ export const ServiceFlexReverse = styled.div `
         .inner-txt-wrapper {
             padding-left: 80px;
 
-            @media only screen and (max-width: 730px) {
+            @media only screen and (max-width: 768px) {
                 padding-left: 0;
             }
             h5 {
@@ -382,6 +495,10 @@ export const ServiceFlexReverse = styled.div `
                 font-size: 28px;
                 padding-right: 40px;
                 line-height: 35px;
+
+                @media only screen and (max-width: 480px) {
+                    padding-right: 0px;
+                }
             }
 
             p {
@@ -389,7 +506,7 @@ export const ServiceFlexReverse = styled.div `
                 font-size: 15px;
                 color: #000;
 
-                @media only screen and (max-width: 730px) {
+                @media only screen and (max-width: 768px) {
                     font-size: 20px
                 }
             }
