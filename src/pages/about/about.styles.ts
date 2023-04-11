@@ -112,6 +112,10 @@ export const AboutSection = styled.section `
         left: 60px;
         bottom: 0;
         position: absolute;
+
+        @media only screen and (max-width: 670px) {
+            left: unset;
+        }
     }
 
     .subsection {
@@ -134,6 +138,11 @@ export const AboutSection = styled.section `
 
         @media only screen and (max-width: 885px) {
             padding: 0 50px;
+            padding-top: 380px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            padding: 0 40px;
             padding-top: 380px;
         }
     }

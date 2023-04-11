@@ -593,6 +593,10 @@ export const SubCardsOverall = styled.div `
 
 export const EmptyCard = styled.div `
     flex: 50%;
+
+    @media only screen and (max-width: 480px) {
+        flex: 30%;
+    }
 `
 
 export const ExplanationCards = styled.div `
@@ -601,6 +605,10 @@ export const ExplanationCards = styled.div `
     box-shadow: 0px 4px 27px rgba(228, 228, 228, 0.25);
     padding: 10px;
     flex: 50%;
+
+    @media only screen and (max-width: 480px) {
+        /* flex: 60% */
+    }
 
     h6 {
         color: #1F2ADE;
@@ -622,6 +630,11 @@ export const ExplanationCards = styled.div `
         border: solid 1px #E9EAFC;
         top: 20px;
         left: -88%;
+
+        @media only screen and (max-width: 480px) {
+            width: 50%;
+            left: -50%;
+        }
     }
 `
 
@@ -642,6 +655,10 @@ export const IndexCircle = styled.div `
     top: 50%;
     left: -8.5%;
     transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 480px) {
+        left: -19%;
+    }
 `
 
 export const PioneersSection = styled.section `
