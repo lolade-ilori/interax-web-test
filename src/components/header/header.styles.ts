@@ -46,6 +46,10 @@ export const HeaderNav = styled.nav `
             align-items: center;
             column-gap: 70px;
 
+            @media only screen and (max-width: 1024px) {
+                column-gap: 40px;
+            }
+
             @media only screen and (max-width: 767px) {
                 display: none;
             }
@@ -54,6 +58,11 @@ export const HeaderNav = styled.nav `
                 text-decoration: none;
                 color: ${(props:any) => props.theme === ' light' ? '#fff' : '#000'};
                 font-size: 18px;
+
+                @media only screen and (max-width: 1024px) {
+                    font-size: 16px;
+                }
+
             }
         }
 
