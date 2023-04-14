@@ -12,7 +12,7 @@ export const TextSection = styled.div `
     align-items: center;
     justify-content: center;
     padding-top: 130px;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 `
 
 export const OurTeamWrap = styled.div `
@@ -23,14 +23,14 @@ export const OurTeamWrap = styled.div `
     font-weight: 600;
     border-radius: 30px;
     min-width: 200px;
-    padding: 10px 0;
+    padding: 13px 0;
     background-color: rgba(31, 42, 222, 0.1);
 `
 
 export const HeaderText = styled.div `
     display: flex;
     justify-content: center;
-    padding: 0 340px;
+    padding: 0 300px;
     padding-top: 40px;
 
     h2 {

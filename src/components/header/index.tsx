@@ -19,7 +19,7 @@ const Header = () => {
                     <li><Link href={'/about'}>About Us</Link></li>
                     <li><Link href={'/faq'}>FAQ</Link></li>
                     <li><Link href={'/team'}>Team</Link></li>
-                    <li><Link href={'/'}>Blog</Link></li>
+                    <li><Link href={'/blog'}>Blog</Link></li>
                     <li><WaitlistBtn>Join Waitlist</WaitlistBtn></li>
                 </ul>
 
