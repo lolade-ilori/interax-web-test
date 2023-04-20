@@ -20,7 +20,7 @@ const Header = () => {
                     <li><Link href={'/faq'}>FAQ</Link></li>
                     <li><Link href={'/team'}>Team</Link></li>
                     <li><Link href={'/blog'}>Blog</Link></li>
-                    <li><WaitlistBtn>Join Waitlist</WaitlistBtn></li>
+                    <li><Link href={'/waitlist'}><WaitlistBtn>Join Waitlist</WaitlistBtn></Link></li>
                 </ul>
 
                 <div className="hamburger">

@@ -50,10 +50,10 @@ const Footer = () => {
 
                     <ul className="column-lists">
                         <li><Link href={'/'}>Home</Link></li>
-                        <li><Link href={'/'}>About Us</Link></li>
+                        <li><Link href={'/about'}>About Us</Link></li>
                         <li><Link href={'/'}>Contact Us</Link></li>
-                        <li><Link href={'/'}>Privacy Policy</Link></li>
-                        <li><Link href={'/'}>Terms and Condition</Link></li>
+                        <li><Link href={'/privacy'}>Privacy Policy</Link></li>
+                        <li><Link href={'/terms-and-conditions'}>Terms and Condition</Link></li>
                     </ul>
                 </FooterColumn>
 
@@ -63,7 +63,7 @@ const Footer = () => {
                     </h3>
 
                     <ul className="column-lists">
-                        <li><Link href={'/'}>FAQs</Link></li>
+                        <li><Link href={'/faq'}>FAQs</Link></li>
                         <li><Link href={'/'}>Customer Service</Link></li>
                         <li><Link href={'/'}>Enquires: hello@interaxhealth.com</Link></li>
                     </ul>

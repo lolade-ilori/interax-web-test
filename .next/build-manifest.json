@@ -30,10 +30,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/blog.js"
     ],
-    "/team": [
+    "/faq": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/team.js"
+      "static/chunks/pages/faq.js"
+    ],
+    "/privacy": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/privacy.js"
+    ],
+    "/terms-and-conditions": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/terms-and-conditions.js"
     ]
   },
   "ampFirstPages": []

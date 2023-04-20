@@ -127,4 +127,9 @@ export const PaginationBtn = styled.div <{active?: boolean}> `
     font-size: 12px;
     cursor: ${(props:any) => props.active ? 'pointer' : 'unset'};
     min-width: 150px;
+    gap: 10px;
+
+    img {
+        width: 7px;
+    }
 `
