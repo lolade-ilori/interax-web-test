@@ -9,6 +9,14 @@ export const HeaderWrap = styled.header `
         align-items: center;
         justify-content: flex-start;
 
+        @media only screen and (max-width: 590px) {
+            padding: 20px 30px;
+        }
+
+        @media only screen and (max-width: 410px) {
+            padding: 20px;
+        } 
+
         img {
             cursor: pointer;
         }
@@ -18,6 +26,17 @@ export const HeaderWrap = styled.header `
 export const BodyWrap = styled.section `
     padding: 50px 100px;
 
+    @media only screen and (max-width: 890px) {
+        padding: 50px;
+    } 
+
+    @media only screen and (max-width: 590px) {
+        padding: 50px 30px;
+    } 
+
+    @media only screen and (max-width: 410px) {
+        padding: 50px 20px;
+    } 
 `
 
 export const TextHeaderSect = styled.div `
@@ -28,6 +47,14 @@ export const TextHeaderSect = styled.div `
         font-size: 40px;
         color: #1F2ADE;
         font-weight: 600;
+
+        @media only screen and (max-width: 790px) {
+            font-size: 30px;
+        } 
+
+        @media only screen and (max-width: 590px) {
+            font-size: 25px;
+        }
     }
 
     .last-updated {
@@ -58,6 +85,10 @@ export const TextContent = styled.div `
             color: #2F2F2F;
             font-weight: 600;
             margin-bottom: 20px;
+
+            @media only screen and (max-width: 450px) {
+                font-size: 19px;
+            } 
         }
 
         ul, ol {

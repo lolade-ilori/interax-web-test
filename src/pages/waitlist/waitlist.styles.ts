@@ -7,6 +7,10 @@ export const WaitlistWrap = styled.section `
     background-color: #1F2ADE;
     position: relative;
 
+    @media only screen and (max-width: 590px)  {
+        height: 100%;
+    }
+
     .waitlist-inner {
         position: relative;
         /* z-index: 20; */
@@ -64,6 +68,41 @@ export const WaitlistTxtWrap = styled.div `
         font-weight: 500;
         text-align: center;
         width: 50%;
+
+        @media only screen and (max-width: 1199px) {
+            width: 60%;
+        } 
+
+        @media only screen and (max-width: 1100px) {
+            font-size: 50px;
+        }
+
+        @media only screen and (max-width: 890px) {
+            font-size: 45px;
+            width: 70%;
+        }
+
+        @media only screen and (max-width: 690px) {
+            font-size: 40px;
+            width: 80%;
+        }
+
+        @media only screen and (max-width: 540px) {
+            font-size: 35px;
+            width: 90%;
+        } 
+
+        @media only screen and (max-width: 417px) {
+            font-size: 30px;
+        } 
+
+        @media only screen and (max-width: 360px) {
+            font-size: 26px;
+        } 
+
+        @media only screen and (max-width: 310px) {
+            font-size: 23px;
+        } 
     }
 `
 
@@ -72,10 +111,26 @@ export const WaitlistFormOverall = styled.div `
     justify-content: center;
     align-items: center;
     margin-top: 60px;
+
+    @media only screen and (max-width: 590px) {
+        margin-bottom: 100px;
+    }
 `
 
 export const WaitlistForm = styled.form `
     width: 60%;
+
+    @media only screen and (max-width: 900px) {
+        width: 70%;
+    }
+
+    @media only screen and (max-width: 690px) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 540px) {
+        width: 90%;
+    }
 
 `
 
@@ -85,6 +140,11 @@ export const SubFormWrap = styled.div `
     justify-content: center;
     column-gap: 30px;
     padding: 10px 0;
+
+    @media only screen and (max-width: 590px) {
+        flex-direction: column;
+        row-gap: 30px;
+    }
 `
 
 export const WaitliistInput = styled.input `
@@ -127,6 +187,10 @@ export const WaitlistFooter = styled.footer `
     bottom: 0;
     width: 100%;
 
+    @media only screen and (max-width: 590px)  {
+        position: relative;
+    }
+
 
     h4 {
         font-size: 17px;
@@ -135,6 +199,22 @@ export const WaitlistFooter = styled.footer `
         text-align: center;
         font-weight: 400;
         letter-spacing: 0.37em;
+
+        @media only screen and (max-width: 565px)  {
+            font-size: 15px;
+        }
+
+        @media only screen and (max-width: 510px) {
+            letter-spacing: 0.25em;
+        }
+
+        @media only screen and (max-width: 430px) {
+            font-size: 12px;
+        } 
+
+        @media only screen and (max-width: 345px)  {
+            font-size: 10px;
+        }
     }
 
     .flex-wrap {

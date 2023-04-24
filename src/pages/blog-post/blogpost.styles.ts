@@ -20,6 +20,26 @@ export const PostImgBanner = styled.div `
 
 export const PostContentSection = styled.section `
     padding: 80px 300px;
+
+    @media only screen and (max-width: 1300px) {
+        padding: 80px 200px;
+    } 
+
+    @media only screen and (max-width: 992px) {
+        padding: 80px 120px;
+    } 
+
+    @media only screen and (max-width: 767px) {
+        padding: 80px  ;
+    } 
+
+    @media only screen and (max-width: 660px) {
+        padding: 80px 50px;
+    }
+
+    @media only screen and (max-width: 478px) {
+        padding: 80px 30px;;
+    }
 `
 
 export const PostContentHead = styled.div `
@@ -28,6 +48,14 @@ export const PostContentHead = styled.div `
         font-weight: 600;
         color: #1F2ADE;
         margin: 0;
+
+        @media only screen and (max-width: 767px) {
+            font-size: 30px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            font-size: 25px;
+        }
     }
 `
 
@@ -70,11 +98,43 @@ export const ContentBody = styled.div `
 export const ExtraReadWrap = styled.section `
     padding: 80px 300px;
 
+    @media only screen and (max-width: 1212px) {
+        padding: 80px 200px;
+    }
+
+    @media only screen and (max-width: 992px) {
+        padding: 80px 100px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 80px;
+    }
+    
+    @media only screen and (max-width: 716px) {
+        padding: 80px 50px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        padding: 80px ;
+    }
+
+    @media only screen and (max-width: 500px) {
+        padding: 80px 60px ;
+    }
+
+    @media only screen and (max-width: 460px) {
+        padding: 80px 30px ;
+    }
+
     .header-wrap {
         h4 {
             color: #2F2F2F;
             font-size: 28px;
             font-weight: 600;
+
+            @media only screen and (max-width: 550px) {
+                font-size: 24px;
+            }
         }
     }
 

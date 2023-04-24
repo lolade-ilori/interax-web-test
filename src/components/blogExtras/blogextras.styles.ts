@@ -9,6 +9,9 @@ export const BlogExtrasWrap = styled.div `
         align-items: center;
         gap: 20px;
 
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+        }
     }
 `
 
@@ -30,12 +33,20 @@ export const BlogTxtWrap = styled.div `
         font-weight: 600;
         font-size: 22px;
         color: #2F2F2F;
+
+        @media only screen and (max-width: 716px) {
+            font-size: 20px;
+        }
     }
 
     p {
         font-size: 13px;
         color: #2F2F2F;
         margin: 15px 0;
+
+        @media only screen and (max-width: 716px) {
+            font-size: 12px;
+        }
     }
 
     .read-more {

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { HeaderText } from '../team/team.styles'
 
 export const BlogOverall = styled.section `
     background-color: #EEEEEE;
@@ -6,17 +7,71 @@ export const BlogOverall = styled.section `
     height: 100%;
 `
 
+export const BlogHeaderText = styled(HeaderText) `
+
+    h2 {
+        @media only screen and (max-width: 740px) {
+            width: 90%;
+        } 
+
+        @media only screen and (max-width: 696px) {
+            font-size: 45px;
+            line-height: 50px;
+        } 
+
+        @media only screen and (max-width: 627px) {
+            font-size: 40px;
+        }
+
+        @media only screen and (max-width: 559px) {
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+
+`
+
 export const BlogContentTxt = styled.div`
     text-align: center;
     color: #000;
     font-size: 18px;
     font-weight: 500;
-    padding: 40px 340px;
+    padding: 40px 0px;
     padding-bottom: 0;
+    width: 50%;
+
+    @media only screen and (max-width: 1280px) {
+        width: 65%;
+    } 
+
+    @media only screen and (max-width: 990px) {
+        width: 75%;
+    } 
+
+    @media only screen and (max-width: 845px) {
+        width: 80%;
+    }
+
+    @media only screen and (max-width: 800px) {
+        width: 90%;
+    } 
 `
 
 export const BlogBanner = styled.div `
     padding: 0 300px;
+
+    @media only screen and (max-width: 1230px) {
+        padding: 0 150px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        padding: 0 50px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        padding: 0 20px;
+        height: 200px;
+    }
 
 
     img {
@@ -28,10 +83,16 @@ export const BlogBanner = styled.div `
 `
 
 export const TabPillWrapper = styled.div `
-    padding: 40px 320px;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 898px) {
+        padding: 40px;
+    }
 
     .inner-tab-wrap {
-        width: 100%;
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
@@ -41,6 +102,46 @@ export const TabPillWrapper = styled.div `
 export const BlogListWrap = styled.div `
     padding: 50px 250px;
     padding-bottom: 100px;
+
+    @media only screen and (max-width: 1400px) {
+        padding: 50px 200px;
+    }
+
+    @media only screen and (max-width: 1230px) {
+        padding: 50px 150px;
+    }
+
+    @media only screen and (max-width: 1100px) {
+        padding: 50px 100px;
+    }
+
+    @media only screen and (max-width: 992px) {
+        padding: 50px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        padding: 50px 100px;
+    }
+
+    @media only screen and (max-width: 689px) {
+        padding: 50px;
+    }
+
+    @media only screen and (max-width: 555px) {
+        padding: 50px 30px;
+    }
+
+    @media only screen and (max-width: 460px) {
+        padding: 50px 70px;
+    }
+
+    @media only screen and (max-width: 411px) {
+        padding: 50px;
+    }
+
+    @media only screen and (max-width: 350px) {
+        padding: 50px 30px;
+    }
 
 
     .inner-list-wrap {

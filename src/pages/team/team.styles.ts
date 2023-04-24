@@ -30,8 +30,13 @@ export const OurTeamWrap = styled.div `
 export const HeaderText = styled.div `
     display: flex;
     justify-content: center;
-    padding: 0 300px;
+    /* padding: 0 300px; */
     padding-top: 40px;
+
+    @media only screen and (max-width: 1414px)  {
+        padding: 0;
+        padding-top: 40px;
+    }
 
     h2 {
         color: #1F2ADE;
@@ -40,17 +45,74 @@ export const HeaderText = styled.div `
         font-family: 'RecoletaAlt-Regular';
         font-weight: 500;
         line-height: 60px;
+        width: 70%;
+
+        @media only screen and (max-width: 1164px)  {
+            width: 80%;
+            font-size: 55px;
+        }
+
+        @media only screen and (max-width: 865px) {
+            font-size: 50px;
+            width: 85%;
+        } 
+
+        @media only screen and (max-width: 552px) {
+            font-size: 40px;
+            line-height: 45px;
+        } 
+
+        @media only screen and (max-width: 440px) {
+            font-size: 38px;
+            line-height: 40px;
+        } 
     }
 `
 
 export const TeamImageSection = styled.section `
+    display: flex;
+    justify-content: center;
 
     .inner-wrapper {
-        padding: 50px 300px;
+        padding: 50px 0px;
         padding-bottom: 150px;
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+        width: 60%;
+
+        @media only screen and (max-width: 1335px) {
+            width: 70%;
+        }
+
+        @media only screen and (max-width: 1100px) {
+            width: 80%;
+        } 
+
+        @media only screen and (max-width: 895px) {
+            width: 90%;
+        } 
+
+        @media only screen and (max-width: 800px) {
+            width: 70%;
+        }
+
+        @media only screen and (max-width: 700px) {
+            width: 80%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 90%;
+        } 
+
+        @media only screen and (max-width: 500px) {
+            gap: 25px;
+        } 
+
+        @media only screen and (max-width: 472px)  {
+            gap: 20px;
+            width: 70%;
+        }
     }
 `
 
@@ -60,6 +122,15 @@ export const ImageWrapper = styled.div `
     background-color: #D9D9D9;
     position: relative;
     height: 320px;
+
+    @media only screen and (max-width: 800px) {
+        flex: 45%;
+        width: 45%;
+    } 
+
+    @media only screen and (max-width: 472px) {
+        flex: 50%;
+    } 
 
     img {
         width: 100%;

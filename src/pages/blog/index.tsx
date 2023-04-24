@@ -4,7 +4,7 @@ import SubscriptionBox from '@components/subscriptionBox'
 import React, { useState } from 'react'
 import { TabPills } from '../faq/faq.styles'
 import { HeaderText, OurTeamWrap, TextSection } from '../team/team.styles'
-import { BlogBanner, BlogContentTxt, BlogItem, BlogListWrap, BlogOverall, PaginationBtn, PaginationBtnWrap, TabPillWrapper } from './blog.styles'
+import { BlogBanner, BlogContentTxt, BlogHeaderText, BlogItem, BlogListWrap, BlogOverall, PaginationBtn, PaginationBtnWrap, TabPillWrapper } from './blog.styles'
 
 const Blog = () => {
     const [tabChosen, setTabChosen] = useState('About interaX')
@@ -27,9 +27,9 @@ const Blog = () => {
                     Blog
                 </OurTeamWrap>
 
-                <HeaderText>
+                <BlogHeaderText>
                     <h2>Explore the world’s knowledge about human health</h2>
-                </HeaderText>
+                </BlogHeaderText>
 
                 <BlogContentTxt>
                 Fames maecenas morbi quis lacinia phasellus arcu hac varius mi. Arcu nisl non posuere pharetra elit est. Pellentesque nulla condimentum condimentum imperdiet. Porttitor nunc tincidunt ipsum erat nunc nec. Id aliquam placerat 
