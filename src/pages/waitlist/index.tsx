@@ -1,8 +1,43 @@
 import Link from 'next/link'
-import React from 'react'
+import type { NextPage } from 'next'
+import React, {FormEvent, useState} from 'react'
 import { AbsoluteWaitlistWrap, JoinWaitlisBtn, SubFormWrap, WaitliistInput, WaitlistFooter, WaitlistForm, WaitlistFormOverall, WaitlistHeader, WaitlistTxtWrap, WaitlistWrap } from './waitlist.styles'
 
-const Waitlist = () => {
+const Waitlist: NextPage = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        let form = {
+            name,
+            email,
+            phone,
+            message
+        }
+
+        const rawResponse = await fetch('/api/submit', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        });
+        const content = await rawResponse.json();
+
+        // print to screen
+        alert(content.data.tableRange)
+
+        // Reset the form fields
+        setMessage('')
+        setPhone('')
+        setName('')
+        setEmail('')
+    }
   return (
     <WaitlistWrap>
 
@@ -23,15 +58,15 @@ const Waitlist = () => {
             </WaitlistTxtWrap>
 
             <WaitlistFormOverall>
-                <WaitlistForm>
+                <WaitlistForm onSubmit={handleSubmit}>
                     <SubFormWrap>
-                        <WaitliistInput type={'text'} placeholder='Full Name' />
-                        <WaitliistInput type={'email'} placeholder='Email Address' />
+                        <WaitliistInput type={'text'} placeholder='Full Name' value={name} onChange={e => setName(e.target.value)}  />
+                        <WaitliistInput type={'email'} placeholder='Email Address' value={email} onChange={e => setEmail(e.target.value)}  />
                     </SubFormWrap>
 
                     <SubFormWrap>
-                        <WaitliistInput type={'text'} placeholder='Phone number' />
-                        <WaitliistInput type={'email'} placeholder='Doctor/User?' />
+                        <WaitliistInput type={'text'} placeholder='Phone number' value={phone} onChange={e => setPhone(e.target.value)} />
+                        <WaitliistInput type={'text'} placeholder='Doctor/User?'  value={message} onChange={e => setMessage(e.target.value)}/>
                     </SubFormWrap>
 
                     <JoinWaitlisBtn type='submit'>

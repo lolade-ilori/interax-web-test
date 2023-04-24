@@ -3,6 +3,7 @@ import Header from '@components/header'
 import { WaitlistBtn } from '@components/header/header.styles'
 import Waitlist from '@components/waitlist'
 import React from 'react'
+import Link from 'next/link'
 import { AboutSection, CardsOverall, ContentWrap, DownloadBtn, EmptyCard, ExplanationCards, ImageBannerWrap, IndexCircle, InvestBanner, InvestBannerInner, InvestLeftSide, InvestRightSide, MissionContentWrap, MissionSection, PioneersImageWrap, PioneersNameWrap, PioneersSection, ServiceFlexBox, ServiceFlexReverse, ServiceSection, ServiceTypesBox, SubCardsOverall, VisionFlex, VisionSection, WhyInteraxWrap, WrapGrey } from './index.styles'
 
 function Home() {
@@ -21,9 +22,12 @@ function Home() {
             </div>
 
             <div className="btn-wrap">
-              <WaitlistBtn>
-                Join Waitlist
-              </WaitlistBtn>
+              <Link href={'/waitlist'}>
+                <WaitlistBtn>
+                  Join Waitlist
+                </WaitlistBtn>
+              </Link>
+
             </div>
           </div>
 

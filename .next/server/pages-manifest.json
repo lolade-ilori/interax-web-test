@@ -2,5 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/blog-post": "pages/blog-post.js"
+  "/waitlist": "pages/waitlist.js",
+  "/api/submit": "pages/api/submit.js"
 }

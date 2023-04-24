@@ -84,7 +84,7 @@ export const WaitlistSubmitWrap = styled.div `
     padding: 20px 0;
 `
 
-export const SubmitBtn = styled.button `
+export const SubmitBtn = styled.button <{onClick?: any}>  `
     border: none;
     outline: none;
     background-color: #fff;
