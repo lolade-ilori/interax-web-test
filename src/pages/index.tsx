@@ -9,8 +9,7 @@ import Head from "next/head"
 import { ReactElement } from "react"
 import Home from "./home"
 
-
-const Main = () => {
+export default function Main() {
   // const { theme } = useAppSelector<any>((store: RootState) => store.theme)
   // const dispatch: AppDispatch = useAppDispatch()
 
@@ -30,4 +29,3 @@ const Main = () => {
   )
 }
 
-export default Main

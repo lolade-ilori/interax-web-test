@@ -8,12 +8,14 @@ export const PostWrap = styled.section `
 export const PostImgBanner = styled.div `
     /* border: solid 1px red; */
     width: 100%;
-    height: 5/30px;
+    /* height: 0px; */
     padding-top: 110px;
 
     .image-wrap {
         img {
-            width: 100%
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
         }
     }
 `

@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/waitlist": [
+    "/blog-post/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/waitlist.js"
+      "static/chunks/pages/blog-post/[slug].js"
     ]
   },
   "ampFirstPages": []

@@ -1,13 +1,37 @@
 import Footer from '@components/footer'
 import Header from '@components/header'
 import SubscriptionBox from '@components/subscriptionBox'
+import {createClient} from "contentful"
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { TabPills } from '../faq/faq.styles'
 import { HeaderText, OurTeamWrap, TextSection } from '../team/team.styles'
 import { BlogBanner, BlogContentTxt, BlogHeaderText, BlogItem, BlogListWrap, BlogOverall, PaginationBtn, PaginationBtnWrap, TabPillWrapper } from './blog.styles'
 
-const Blog = () => {
+
+export async function getStaticProps() {
+    // Inside here we want to connect to contentful, using createClient to setup a connection
+  
+    const client = createClient({
+      // @ts-ignore
+      space: process.env.CONTENTFUL_SPACE_ID,
+      // @ts-ignore
+      accessToken: process.env.CONTENTFUL_ACCESS_KEY ,
+    })
+  
+    // function to get items from our contentful space
+    const res = await client.getEntries({content_type: 'blog'})
+  
+    return {
+      props: {
+        blogs: res?.items
+      }
+    }
+  }
+
+export default function Blog({blogs}: any) {
     const [tabChosen, setTabChosen] = useState('About interaX')
+    console.log(blogs, 'l')
 
     const TabsOption:any = [
         {name: 'About interaX'},
@@ -43,9 +67,9 @@ const Blog = () => {
             <TabPillWrapper>
                 <div className="inner-tab-wrap">
                     {
-                        TabsOption?.map((item:any) => {
+                        TabsOption?.map((item:any, id:any) => {
                             return (
-                                <TabPills active={item?.name === tabChosen ? true : false} onClick={() => {setTabChosen(item?.name)}}>
+                                <TabPills key={id} active={item?.name === tabChosen ? true : false} onClick={() => {setTabChosen(item?.name)}}>
                                     {item?.name}
                                 </TabPills>
                             )
@@ -57,176 +81,33 @@ const Blog = () => {
 
             <BlogListWrap>
                 <div className="inner-list-wrap">
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
+                    {
+                        blogs?.map((item:any) => {
+                            return (
+                                <BlogItem key={item?.sys?.id}>
+                                    <div className="blog-item-image">
+                                        <img src={`https:${item?.fields?.thumbnail?.fields?.file?.url}`} loading="lazy" />
+                                    </div>
+            
+                                    <div className="blog-item-head">
+                                        <h3>{item?.fields?.title}</h3>
+                                    </div>
+            
+                                    <div className="blog-item-content">
+                                        <p>{item?.fields?.shortDescription}</p>
+                                    </div>
+            
+                                    <Link href={`/blog-post/${item?.fields?.slug}`}>
+                                        <div className="readmore-btn">
+                                            <p>Read more</p>
+                                            <img src="assets/svg/readmore-arrow.svg" />
+                                        </div>
+                                    </Link>
 
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
-
-                    <BlogItem>
-                        <div className="blog-item-image">
-                            <img src="assets/png/blogitem-img.png" />
-                        </div>
-
-                        <div className="blog-item-head">
-                            <h3>Nisi purus pretium sapien is. Suscipit gravida pretium</h3>
-                        </div>
-
-                        <div className="blog-item-content">
-                            <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
-                        </div>
-
-                        <div className="readmore-btn">
-                            <p>Read more</p>
-                            <img src="assets/svg/readmore-arrow.svg" />
-                        </div>
-                    </BlogItem>
+                                </BlogItem>
+                            )
+                        })
+                    }
                 </div>
 
                 <PaginationBtnWrap>
@@ -246,5 +127,3 @@ const Blog = () => {
     </>
   )
 }
-
-export default Blog
