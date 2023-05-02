@@ -74,7 +74,7 @@ export const BannerImg = styled.div `
     left:50%; 
     transform:translate(-50%, -50%);
     width: 70%;
-    z-index: 400;
+    z-index: 30;
 
     @media only screen and (max-width: 992px) {
         width: 80%;

@@ -1,27 +1,31 @@
 import React from 'react'
 import { PaginationBtn } from 'src/pages/blog/blog.styles'
 import { BlogExtrasWrap, BlogImageWrap, BlogTxtWrap } from './blogextras.styles'
+import Link from 'next/link'
 
-const BlogExtras = () => {
+const BlogExtras = ({imgLink, title, shorts, slug}:any) => {
   return (
     <>
         <BlogExtrasWrap>
             <div className="extras-inner-wrap">
                 <BlogImageWrap>
-                    <img src="/assets/png/blog-extra.png" />
+                    <img src={`https:${imgLink}`} />
                 </BlogImageWrap>
 
                 <BlogTxtWrap>
-                    <h5>Nisi purus pretium sapien lorem risus mauris. Suscipit gravida pretium ornare pellentesque </h5>
+                    <h5>{title}</h5>
 
-                    <p>Scelerisque tortor elementum malesuada nisi viverra cras arcu donec congue. Viverra risus nullam sit feugiat rhoncus aliquam nam justo purus. Feugiat volutpat ut facilisis at ut.</p>
+                    <p>{shorts}</p>
 
                     <div className="read-more">
-                        <div className='readmore-btn'>
-                            <p>Read more</p>
+                        <Link href={`blog-post/${slug}`}>
+                            <div className='readmore-btn'>
+                                <p>Read more</p>
 
-                            <img src="/assets/svg/arrow.svg" />
-                        </div>
+                                <img src="/assets/svg/arrow.svg" />
+                            </div>
+                        </Link>
+            
                     </div>
                 </BlogTxtWrap>
             </div>

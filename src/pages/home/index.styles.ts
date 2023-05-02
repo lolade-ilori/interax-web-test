@@ -123,7 +123,7 @@ export const ImageBannerWrap = styled.div`
     width: 70%;
     gap: 10px;
     flex-wrap: wrap;
-    z-index: 400;
+    z-index: 30;
 
     @media only screen and (max-width: 555px) {
         width: 90% ;

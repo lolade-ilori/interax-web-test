@@ -20,12 +20,13 @@ export async function getStaticProps() {
     })
   
     // function to get items from our contentful space
-    const res = await client.getEntries({content_type: 'blog'})
+    const res = await client.getEntries({content_type: 'pageBlogPost'})
   
     return {
       props: {
         blogs: res?.items
-      }
+      },
+      revalidate: 1,
     }
   }
 
@@ -86,7 +87,7 @@ export default function Blog({blogs}: any) {
                             return (
                                 <BlogItem key={item?.sys?.id}>
                                     <div className="blog-item-image">
-                                        <img src={`https:${item?.fields?.thumbnail?.fields?.file?.url}`} loading="lazy" />
+                                        <img src={`https:${item?.fields?.featuredImage?.fields?.file?.url}`} loading="lazy" />
                                     </div>
             
                                     <div className="blog-item-head">
@@ -110,7 +111,7 @@ export default function Blog({blogs}: any) {
                     }
                 </div>
 
-                <PaginationBtnWrap>
+                {/* <PaginationBtnWrap>
                     <PaginationBtn>
                         Previous
                     </PaginationBtn>
@@ -118,7 +119,7 @@ export default function Blog({blogs}: any) {
                     <PaginationBtn active>
                         Next
                     </PaginationBtn>
-                </PaginationBtnWrap>
+                </PaginationBtnWrap> */}
             </BlogListWrap>
         </BlogOverall>
 

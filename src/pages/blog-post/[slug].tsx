@@ -3,8 +3,9 @@ import Footer from '@components/footer'
 import Header from '@components/header'
 import SubscriptionBox from '@components/subscriptionBox'
 import {createClient} from "contentful"
-import { ContentBody, ContentSubHead, ExtraReadWrap, PostContentHead, PostContentSection, PostImgBanner, PostWrap, SeeMoreBtn, SeeMoreOverall } from './blogpost.styles'
+import { ContentBody, ContentSubHead, ExtraReadWrap, LoadingWrap, PostContentHead, PostContentSection, PostImgBanner, PostWrap, SeeMoreBtn, SeeMoreOverall } from './blogpost.styles'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Moment from 'moment';
 
 
 const client = createClient({
@@ -16,7 +17,7 @@ const client = createClient({
 
 export const getStaticPaths = async () => {
     const res = await client.getEntries({
-        content_type: 'blog'
+        content_type: 'pageBlogPost'
     }) 
 
     const paths = res.items.map((items:any) => {
@@ -27,25 +28,41 @@ export const getStaticPaths = async () => {
 
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 
 export const getStaticProps = async ({params}:any) => {
     const {items} = await client.getEntries({
-        content_type: 'blog',
+        content_type: 'pageBlogPost',
         'fields.slug' : params.slug
     })
 
+    const res = await client.getEntries({content_type: 'pageBlogPost'})
+
+    if(!items?.length) {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            }
+        }
+
+    }
 
     return {
-        props:{ blog: items[0]}
+        props:{ blog: items[0], extraBlogs: res?.items},
+        revalidate: 1,
     }
 }
 
-export default function BlogPost({blog}:any) {
-    const  {featuredImage, ingredients, title, cookingTime, information} = blog?.fields
+
+export default function BlogPost({blog, extraBlogs}:any) {
+    if (!blog) return <LoadingWrap>Loading...</LoadingWrap>
+
+    const  {featuredImage, ingredients, title, cookingTime, content, author} = blog?.fields
     console.log(blog)
+    console.log(extraBlogs, 'extra')
   return (
     <>
         <Header />
@@ -64,13 +81,13 @@ export default function BlogPost({blog}:any) {
 
                 <ContentSubHead>
                     <div className="inner-wrap">
-                        <p className="name-wrap">Bard Laureatte</p>
-                        <p className="date-wrap">April 08, 2023</p>
+                        <p className="name-wrap">{author?.fields?.avatar?.fields?.title}</p>
+                        <p className="date-wrap">{Moment(author?.fields?.avatar?.sys?.updatedAt)?.format('MM-DD-YYYY')}</p>
                     </div>
                 </ContentSubHead>
 
                 <ContentBody>
-                    {documentToReactComponents(information)}
+                    {documentToReactComponents(content)}
                 </ContentBody>
             </PostContentSection>
             
@@ -80,10 +97,18 @@ export default function BlogPost({blog}:any) {
                 </div>
 
                 <div className="extras-wrap">
-                    <BlogExtras />
-                    <BlogExtras />
-                    <BlogExtras />
-                    <BlogExtras />
+                    {
+                        extraBlogs?.map((item:any) => {
+                            <BlogExtras 
+                                // key={item?.sys?.id}
+                                // imgLink={item?.fields?.thumbnail?.fields?.file?.url}
+                                // title={item?.fields?.title}
+                                // shorts={item?.fields?.shortDescription}
+                                // slug={item?.fields?.slug}
+                            />
+                        })
+                    }
+                    
                 </div>
             </ExtraReadWrap>
 

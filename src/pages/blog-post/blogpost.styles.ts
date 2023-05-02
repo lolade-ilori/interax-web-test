@@ -5,6 +5,17 @@ export const PostWrap = styled.section `
     padding-bottom: 80px;
 `
 
+export const LoadingWrap = styled.div `
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: 600;
+    font-size: 20px;
+`
+
 export const PostImgBanner = styled.div `
     /* border: solid 1px red; */
     width: 100%;
