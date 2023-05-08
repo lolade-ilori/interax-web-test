@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { HeaderText } from './team.styles'
 
 export const BlogOverall = styled.section `
-    background-color: #EEEEEE;
+    background-color: #fff;
     width: 100%;
     height: 100%;
 `
