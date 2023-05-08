@@ -431,6 +431,7 @@ export const ServiceFlexBox = styled.div`
 
         @media only screen and (max-width: 480px) {
           padding-right: 0px;
+          font-size: 25px;
         }
       }
 
@@ -441,6 +442,10 @@ export const ServiceFlexBox = styled.div`
 
         @media only screen and (max-width: 768px) {
           font-size: 20px;
+        }
+
+        @media only screen and (max-width: 480px) {
+          font-size: 16px;
         }
       }
     }
@@ -486,6 +491,7 @@ export const ServiceFlexReverse = styled.div`
 
         @media only screen and (max-width: 480px) {
           padding-right: 0px;
+          font-size: 25px;
         }
       }
 
@@ -496,6 +502,10 @@ export const ServiceFlexReverse = styled.div`
 
         @media only screen and (max-width: 768px) {
           font-size: 20px;
+        }
+
+        @media only screen and (max-width: 480px) {
+          font-size: 16px;
         }
       }
     }

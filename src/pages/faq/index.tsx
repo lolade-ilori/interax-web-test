@@ -46,9 +46,9 @@ const Faq = () => {
                 </div>
 
                 <div className="right-side">
-                    <div className="header-wrap">
+                    {/* <div className="header-wrap">
                         <h3>For easy navigation of the end users, the FAQs should be divided into sections.</h3>
-                    </div>
+                    </div> */}
 
                     <div className="pills-wrapper">
                         {

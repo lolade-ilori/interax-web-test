@@ -221,7 +221,7 @@ function Home() {
                   <ExplanationCards>
                     <h6>Responsive:</h6>
 
-                    <div className="content"><p>iinteraX is responsive to your needs and offers you personalised care and attention.</p></div>
+                    <div className="content"><p>interaX is responsive to your needs and offers you personalised care and attention.</p></div>
 
                     <div className="card-line">
                       <IndexCircle>

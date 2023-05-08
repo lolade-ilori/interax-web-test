@@ -65,7 +65,7 @@ export default function Blog({blogs}: any) {
                 <img src="/assets/png/blog-banner.png" />
             </BlogBanner>
 
-            <TabPillWrapper>
+            {/* <TabPillWrapper>
                 <div className="inner-tab-wrap">
                     {
                         TabsOption?.map((item:any, id:any) => {
@@ -78,7 +78,7 @@ export default function Blog({blogs}: any) {
                     }
 
                 </div>
-            </TabPillWrapper>
+            </TabPillWrapper> */}
 
             <BlogListWrap>
                 <div className="inner-list-wrap">
