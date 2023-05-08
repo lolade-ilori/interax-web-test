@@ -4,7 +4,7 @@ export const WrapGrey = styled.div`
   min-height: 900px;
   position: relative;
   width: 100%;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 
   @media only screen and (max-width: 768px) {
     min-height: 600px;
