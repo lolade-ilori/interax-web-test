@@ -3,7 +3,7 @@ import Footer from '@components/footer'
 import Header from '@components/header'
 import SubscriptionBox from '@components/subscriptionBox'
 import {createClient} from "contentful"
-import { ContentBody, ContentSubHead, ExtraReadWrap, LoadingWrap, PostContentHead, PostContentSection, PostImgBanner, PostWrap, SeeMoreBtn, SeeMoreOverall } from './blogpost.styles'
+import { ContentBody, ContentSubHead, ExtraReadWrap, LoadingWrap, PostContentHead, PostContentSection, PostImgBanner, PostWrap, SeeMoreBtn, SeeMoreOverall } from '../../components/styled/blogpost.styles'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Moment from 'moment';
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { HeaderText } from '../team/team.styles'
+import { HeaderText } from './team.styles'
 
 export const BlogOverall = styled.section `
     background-color: #EEEEEE;

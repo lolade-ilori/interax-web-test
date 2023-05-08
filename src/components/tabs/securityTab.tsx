@@ -10,7 +10,7 @@ const SecurityTab = () => {
             </div>
 
             <div className="answer-wrap">
-                <p>The interaX platform allows you to report inaccuracies, false information (need to know if there is provision for this)</p>
+                <p>The interaX community is secure and protected. We prioritise the safety and privacy of our members and ensure that user data is kept private. Additionally, our platform allows for anonymous questions to be asked to protect users' identities.</p>
             </div>
         </QuestionAnswerWrap>        
 
@@ -20,7 +20,7 @@ const SecurityTab = () => {
             </div>
 
             <div className="answer-wrap">
-                <p>(I need to know what security measures we have to respond to this)</p>
+                <p>To help ensure the safety of your data, we encourage you to avoid sharing non-health-related information, such as phone numbers, addresses, or email addresses, when asking questions on the platform.</p>
             </div>
         </QuestionAnswerWrap>    
 
@@ -30,11 +30,11 @@ const SecurityTab = () => {
             </div>
 
             <div className="answer-wrap">
-                <p>You can share your test results and medical records with community members. However, it is important to be mindful of the sensitive nature of personal medical information and take precautions to protect your privacy. Before sharing your information, consider whether the person you share it with has a legitimate need to know and whether they are authorised to access it. Maintaining confidentiality and respecting individuals' privacy is essential regarding personal medical information. Read our community engagement guidelines here (community engagement rules come here).</p>
+                <p>The interaX community is exclusively for communication between users and healthcare professionals. Users can share test result images at their own risk, but we advise against sharing personal information. It's best to communicate with healthcare professionals via text, and avoid sharing images containing personal details.</p>
             </div>
         </QuestionAnswerWrap>    
 
-        <QuestionAnswerWrap>
+        {/* <QuestionAnswerWrap>
             <div className="question-wrap">
                 <h3>Are there any guidelines for how to engage with others in the community in a respectful manner?</h3>
             </div>
@@ -42,7 +42,7 @@ const SecurityTab = () => {
             <div className="answer-wrap">
                 <p>There are engagement rules in place to ensure a sane, respectful and healthy community. Read the interaX community rules here.)</p>
             </div>
-        </QuestionAnswerWrap>    
+        </QuestionAnswerWrap>     */}
     </>
   )
 }

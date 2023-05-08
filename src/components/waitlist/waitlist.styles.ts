@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const WaitlistWrap = styled.section `
     width: 100%;
-    position: relative;
+    /* position: relative; */
     background-color: #1F2ADE;
 `
 

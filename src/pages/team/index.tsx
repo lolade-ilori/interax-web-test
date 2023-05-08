@@ -2,7 +2,7 @@ import Footer from '@components/footer'
 import Header from '@components/header'
 import Waitlist from '@components/waitlist'
 import React from 'react'
-import { HeaderText, ImageWrapper, OurTeamWrap, TeamImageSection, TeamOverallWrap, TextSection } from './team.styles'
+import { HeaderText, ImageWrapper, OurTeamWrap, TeamImageSection, TeamOverallWrap, TextSection } from '../../components/styled/team.styles'
 
 const Team = () => {
     

@@ -4,9 +4,9 @@ import SubscriptionBox from '@components/subscriptionBox'
 import {createClient} from "contentful"
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { TabPills } from '../faq/faq.styles'
-import { HeaderText, OurTeamWrap, TextSection } from '../team/team.styles'
-import { BlogBanner, BlogContentTxt, BlogHeaderText, BlogItem, BlogListWrap, BlogOverall, PaginationBtn, PaginationBtnWrap, TabPillWrapper } from './blog.styles'
+import { TabPills } from '../../components/styled/faq.styles'
+import { HeaderText, OurTeamWrap, TextSection } from '../../components/styled/team.styles'
+import { BlogBanner, BlogContentTxt, BlogHeaderText, BlogItem, BlogListWrap, BlogOverall, PaginationBtn, PaginationBtnWrap, TabPillWrapper } from '../../components/styled/blog.styles'
 
 
 export async function getStaticProps() {
@@ -57,7 +57,7 @@ export default function Blog({blogs}: any) {
                 </BlogHeaderText>
 
                 <BlogContentTxt>
-                Fames maecenas morbi quis lacinia phasellus arcu hac varius mi. Arcu nisl non posuere pharetra elit est. Pellentesque nulla condimentum condimentum imperdiet. Porttitor nunc tincidunt ipsum erat nunc nec. Id aliquam placerat 
+                Read your way to a healthier life with our blog.
                 </BlogContentTxt>
             </TextSection>
 

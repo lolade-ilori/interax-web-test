@@ -16,6 +16,7 @@ export const WrapGrey = styled.div`
 
   .inner-wrap {
     padding-top: 150px;
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,14 +117,11 @@ export const WrapGrey = styled.div`
 
 export const ImageBannerWrap = styled.div`
   display: flex;
-  position: absolute;
-  top: 95%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 70%;
   gap: 10px;
   flex-wrap: wrap;
-  z-index: 30;
+  /* z-index: 30; */
 
   @media only screen and (max-width: 555px) {
     width: 90%;
@@ -188,10 +186,10 @@ export const MissionSection = styled.section`
   }
 
   .inner-wrapper {
-    padding-top: 350px;
+    padding-top: 100px;
 
     @media only screen and (max-width: 768px) {
-      padding-top: 200px;
+      padding-top: 80px;
     }
 
     .head-text {

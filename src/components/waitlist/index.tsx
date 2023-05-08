@@ -1,5 +1,6 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { FormEvent, useState } from "react"
+import 'react-toastify/dist/ReactToastify.css';
 import {
   SubmitBtn,
   WailtistFlex,
@@ -10,6 +11,7 @@ import {
   WaitlistSubmitWrap,
   WaitlistWrap,
 } from "./waitlist.styles"
+import { ToastContainer, toast } from 'react-toastify';
 
 const Waitlist = () => {
   const [name, setName] = useState("")
@@ -37,6 +39,7 @@ const Waitlist = () => {
       })
       // loads document properties and worksheets
       await doc.loadInfo()
+      notifySuccess('Thank you for joining our waitlist')
 
       const sheet = doc.sheetsById[SHEET_ID]
       await sheet.addRow(row)
@@ -47,27 +50,44 @@ const Waitlist = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    let form = {
-      name,
-      email,
-      phone,
-      message,
+    if(name?.length < 3) {
+      notifyError('Please fill in your full name')
+    }else if(email.length === 0){
+      notifyError('Please type in your mail')
+    }else if(!email.match(mailformat)) {
+      notifyError("Invalid Mail Format")
+    }else if(phone?.length === 0) {
+      notifyError('Please fill in your phone number')
+    }else if(phone?.length < 11) {
+      notifyError('Invalid phone format')
+    }else if(message?.length === 0) {
+      notifyError('Please type in if you are a Doctor or User')
+    }else if((!message?.toLowerCase()?.includes('user')) && (!message?.toLowerCase()?.includes('doctor'))  ) {
+      notifyError('Please type in if you are a Doctor or User')
+    }else {
+      let form = {
+        name,
+        email,
+        phone,
+        message,
+      }
+  
+      const newRow = {
+        Name: form.name,
+        Email: form.email,
+        Phone: form.phone,
+        Type: form.message,
+      }
+  
+      appendSpreadsheet(newRow)
+  
+      setMessage("")
+      setPhone("")
+      setName("")
+      setEmail("")
     }
-
-    const newRow = {
-      Name: form.name,
-      Email: form.email,
-      Phone: form.phone,
-      Type: form.message,
-    }
-
-    appendSpreadsheet(newRow)
-
-    setMessage("")
-    setPhone("")
-    setName("")
-    setEmail("")
 
     // const rawResponse = await fetch("/api/submit", {
     //   method: "POST",
@@ -89,8 +109,32 @@ const Waitlist = () => {
     // setEmail("")
   }
 
+
+    const notifyError = (text: any) => toast.error(text, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    })
+
+    const notifySuccess = (text: any) => toast.success(text, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    })
+
   return (
     <WaitlistWrap>
+      <ToastContainer />
       <WaitlistInner>
         <WaitlistHeader>join the waitlist</WaitlistHeader>
 

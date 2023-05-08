@@ -1,7 +1,7 @@
 import Footer from '@components/footer'
 import Link from 'next/link'
 import React from 'react'
-import { BodyWrap, HeaderWrap, TextContent, TextHeaderSect } from './terms.styles'
+import { BodyWrap, HeaderWrap, TextContent, TextHeaderSect } from '../../components/styled/terms.styles'
 
 const TermsConditions = () => {
   return (

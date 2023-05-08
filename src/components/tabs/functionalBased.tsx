@@ -6,51 +6,51 @@ const FunctionalBasedTab = () => {
     <>
         <QuestionAnswerWrap>
             <div className="question-wrap">
-                <h3>Can I talk to a medical doctor online in Nigeria for free?</h3>
+                <h3>How can I report any inaccuracies or false information on the community?</h3>
             </div>
 
             <div className="answer-wrap">
-                <p>Yes, with InteraX, you can access a huge directory of doctors in Nigeria, consult them anyday and anytime from the comfort of your mobile devices and get satisfactory answers to your medical concerns.</p>
+                <p>The platform allows you to report inaccuracies and false information.</p>
             </div>
         </QuestionAnswerWrap>
 
         <QuestionAnswerWrap>
             <div className="question-wrap">
-                <h3>Can I access the community from any device?</h3>
+                <h3>Can I access information related to a specific medical condition or treatment?</h3>
             </div>
 
             <div className="answer-wrap">
-                <p>Yes, you can access the interaX community through the website or the mobile app from any device. Download interaX for Android and ioS devices.</p>
+                <p>To access information on specific medical conditions, you can use the search button on the application to see if there are already blog posts that answer your questions. Otherwise, you can consult a professional in the community.</p>
             </div>
         </QuestionAnswerWrap>
 
         <QuestionAnswerWrap>
             <div className="question-wrap">
-                <h3>Can I communicate with a doctor or healthcare professional through the app?</h3>
+                <h3>Can I share information and resources with other members of the community?</h3>
             </div>
 
             <div className="answer-wrap">
-                <p>The interaX mobile application gives you quick access to registered healthcare professionals nationwide, saving you time and stress.</p>
+                <p>You can share information and resources only with doctors.</p>
             </div>
         </QuestionAnswerWrap>
 
         <QuestionAnswerWrap>
             <div className="question-wrap">
-                <h3>Is it possible to schedule virtual appointments or consultations through the community?</h3>
+                <h3>How can I receive notifications for new posts or updates on the community?</h3>
             </div>
 
             <div className="answer-wrap">
-                <p>You can schedule virtual appointments and consultations with healthcare professionals from the community. Read how to schedule a consultation here (How to schedule a virtual consultation). (I wrote and deleted about five times here, trying to determine the right response. I know people can consult professionals from the community, but I am not sure about making appointments, especially in hospitals)</p>
+                <p>To stay ahead of the latest in the interaX community, you need to turn on notifications in your mobile device settings.</p>
             </div>
         </QuestionAnswerWrap>
 
         <QuestionAnswerWrap>
             <div className="question-wrap">
-                <h3>Can I ask questions and receive answers from the community's healthcare professionals or experts?</h3>
+                <h3>Can I provide feedback or suggest new features for the community?</h3>
             </div>
 
             <div className="answer-wrap">
-                <p>You can ask questions in the community and have healthcare professionals answer your questions.</p>
+                <p>You can always provide feedback and suggestions through the contact option on the interaX application and through our social media channels.</p>
             </div>
         </QuestionAnswerWrap>
     </>

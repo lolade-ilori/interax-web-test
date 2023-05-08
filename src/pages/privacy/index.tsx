@@ -1,8 +1,8 @@
 import Footer from '@components/footer'
 import Link from 'next/link'
 import React from 'react'
-import { HeaderWrap, BodyWrap, TextHeaderSect, TextContent } from '../terms-and-conditions/terms.styles'
-import { PrivacyWrap } from './privacypolicy.styles'
+import { HeaderWrap, BodyWrap, TextHeaderSect, TextContent } from '../../components/styled/terms.styles'
+import { PrivacyWrap } from '../../components/styled/privacypolicy.styles'
 
 const PrivacyPolicy = () => {
   return (

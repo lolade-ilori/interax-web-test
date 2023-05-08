@@ -3,7 +3,7 @@ import Footer from '@components/footer'
 import Header from '@components/header'
 import Waitlist from '@components/waitlist'
 import React, { useState } from 'react'
-import { FaqBanner, QuestionsSection, TabPills } from './faq.styles'
+import { FaqBanner, QuestionsSection, TabPills } from '../../components/styled/faq.styles'
 import SecurityTab from '@components/tabs/securityTab'
 import TaskOrientedTab from '@components/tabs/taskOrientedTab'
 import FunctionalBasedTab from '@components/tabs/functionalBased'
@@ -13,10 +13,8 @@ const Faq = () => {
 
     const TabsOption:any = [
         {name: 'About interaX'},
-        {name: 'Functional-based'},
-        {name: 'Task-oriented'},
-        {name: 'Technical'}, 
-        {name: 'Security'}, 
+        {name: 'Functionality'},
+        {name: 'Privacy and Security'},
     ] 
 
   return (
@@ -71,17 +69,12 @@ const Faq = () => {
                         }
 
                         { 
-                            tabChosen === 'Functional-based' &&
+                            tabChosen === 'Functionality' &&
                             <FunctionalBasedTab />
                         }
 
-                        { 
-                            tabChosen === 'Task-oriented' &&
-                            <TaskOrientedTab />
-                        }
-
                         {    
-                            tabChosen === 'Security' &&
+                            tabChosen === 'Privacy and Security' &&
                             <SecurityTab />
                         }
 

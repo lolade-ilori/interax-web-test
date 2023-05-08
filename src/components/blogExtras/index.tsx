@@ -1,5 +1,5 @@
 import React from 'react'
-import { PaginationBtn } from 'src/pages/blog/blog.styles'
+import { PaginationBtn } from '@components/styled/blog.styles'
 import { BlogExtrasWrap, BlogImageWrap, BlogTxtWrap } from './blogextras.styles'
 import Link from 'next/link'
 
