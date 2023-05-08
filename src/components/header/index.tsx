@@ -20,7 +20,7 @@ const Header = () => {
                 <ul>
                     <li><Link href={'/about'}>About Us</Link></li>
                     <li><Link href={'/faq'}>FAQ</Link></li>
-                    <li><Link href={'/team'}>Team</Link></li>
+                    {/* <li><Link href={'/team'}>Team</Link></li> */}
                     <li><Link href={'/blog'}>Blog</Link></li>
                     <li><Link href={'/waitlist'}><WaitlistBtn>Join Waitlist</WaitlistBtn></Link></li>
                 </ul>
@@ -41,7 +41,7 @@ const Header = () => {
                             <li><Link href={'/'}>Home</Link></li>
                             <li><Link href={'/about'}>About Us</Link></li>
                             <li><Link href={'/faq'}>FAQ</Link></li>
-                            <li><Link href={'/team'}>Team</Link></li>
+                            {/* <li><Link href={'/team'}>Team</Link></li> */}
                             <li><Link href={'/blog'}>Blog</Link></li>
                             <li><Link href={'/waitlist'}>Join Waitlist</Link></li>
                         </ul>
